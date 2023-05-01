@@ -82,7 +82,7 @@ router.get("/logout", (req, res) => {
   res.render("session/login")
 })
 
-router.get("/welcome", (req, res) => {
+router.get("/welcome", ensureAuthenticated, (req, res) => {
   res.render("welcome")
 })
 
